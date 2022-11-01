@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import TimePanel from '../DesignElements/TimePanel/TimePanel';
 import ControlPanel from '../DesignElements/ControlPanel/ControlPanel';
+import Dashboard from '../DesignElements/StopwatchDashboard/Dashboard';
 
 import './StopWatch.scss'
 import {addMilliseconds} from 'date-fns'
@@ -42,10 +43,14 @@ const StopWatch = () => {
     }, [isRunning, time])
 
     return (
-        <article className='stopWatch'>
-           <TimePanel time={time}/>
-           <ControlPanel onGo={toggle} isRunning={isRunning} onReset={reset} onLap={lap}/>
-        </article>
+        <>
+            <article className='stopWatch'>
+                <TimePanel time={time}/>
+                <ControlPanel onGo={toggle} isRunning={isRunning} onReset={reset} onLap={lap}/>
+            </article>
+            {results.length === 0 ? null : <Dashboard results={results}/>}
+            
+        </>
     );
 }
 

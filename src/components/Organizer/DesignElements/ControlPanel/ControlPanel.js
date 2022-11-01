@@ -3,8 +3,7 @@ import './ControlPanel.scss'
 
 const ControlPanel = (props) => {
     const {onGo, onReset, onLap, isRunning} = props;
-    // console.log(onReset)
-
+    
     return (
         <section className='controlPanel'>
 

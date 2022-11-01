@@ -9,8 +9,7 @@
 
 .controlPanel {
     @include center;
-    justify-content: space-around;
-        
+    justify-content: space-around;  
 }
 
 .controlBtn {
@@ -19,12 +18,11 @@
     @include center;
     font-size: 30px;
     font-family: inherit;
-
     flex-grow: 1;
     width: 33%;
+    cursor: pointer;
 
         span {
             margin-right: 5px;
         }
-    
 }
