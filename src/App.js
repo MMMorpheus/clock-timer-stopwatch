@@ -1,12 +1,12 @@
 import './App.css';
-import StopWatch from './components/StopWatch/StopWatch';
+import Organizer from './components/Organizer/Organizer';
 
 
 
 function App() {
 
   
-  return <StopWatch />
+  return <Organizer />
 }
 
 export default App;

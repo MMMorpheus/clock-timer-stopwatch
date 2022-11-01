@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+@mixin center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center
+}
+
+.controlPanel {
+    @include center;
+    justify-content: space-around;
+        
+}
+
+.controlBtn {
+    background-color: inherit;
+    border: none;
+    @include center;
+    font-size: 30px;
+    font-family: inherit;
+
+    flex-grow: 1;
+    width: 33%;
+
+        span {
+            margin-right: 5px;
+        }
+    
+}
