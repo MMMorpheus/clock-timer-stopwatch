@@ -11,11 +11,23 @@ const Organizer = () => {
         setCurrentOption(!currentOption)
     }
 
+    const stopWatchOption = () => {
+        if(currentOption){
+            toggle()
+        }
+    }
+
+    const timerOption = () => {
+        if(!currentOption){
+            toggle()
+        }
+    }
+
     return (
         <article className='organizer'>
             <div className='changeOptionPanel'>
-                <div onClick ={toggle} className='btn'>Stopwatch</div>
-                <div onClick ={toggle} className='btn'>Timer</div>
+                <div onClick ={stopWatchOption} className='btn'>Stopwatch</div>
+                <div onClick ={timerOption} className='btn'>Timer</div>
             </div>
             {!currentOption ? <StopWatch /> : <Timer />}
             
