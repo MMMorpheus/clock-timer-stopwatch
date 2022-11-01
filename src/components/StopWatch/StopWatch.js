@@ -6,6 +6,12 @@ const StopWatch = () => {
 
     const [time, setTime] = useState(new Date(0, 0, 0, 0));
     const [isRunning, setIsRunning] = useState(false);
+    const [results, setResults] = useState([]);
+
+    const lap = () => {
+        setResults(results.push(time))
+        console.log(results)
+    }
 
     const toggle = () => {
         setIsRunning(!isRunning)
@@ -16,6 +22,9 @@ const StopWatch = () => {
     }
 
     const reset = () => {
+        if(isRunning) {
+            toggle()
+        }
         setTime(new Date(0, 0, 0, 0))
     }
 
@@ -54,10 +63,10 @@ const StopWatch = () => {
                 {!isRunning ? 'START' : 'PAUSE'}
             </button>
             <button onClick={reset} className='controlBtn'>
-            <span class="material-symbols-outlined">replay</span>
+            <span className="material-symbols-outlined">replay</span>
                 RESET</button>
-            <button className='controlBtn'>
-            <span class="material-symbols-outlined">playlist_add</span>
+            <button onClick={lap} className='controlBtn'>
+            <span className="material-symbols-outlined">playlist_add</span>
                 LAP</button>
            </section>
         </article>
