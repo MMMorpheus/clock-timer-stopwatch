@@ -42,6 +42,7 @@ const StopWatch = () => {
         }
     }, [isRunning, time])
 
+
     return (
         <section>
             <article className='stopWatch'>
