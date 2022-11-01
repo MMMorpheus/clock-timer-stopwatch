@@ -43,14 +43,14 @@ const StopWatch = () => {
     }, [isRunning, time])
 
     return (
-        <>
+        <section>
             <article className='stopWatch'>
                 <TimePanel time={time}/>
                 <ControlPanel onGo={toggle} isRunning={isRunning} onReset={reset} onLap={lap}/>
             </article>
             {results.length === 0 ? null : <Dashboard results={results}/>}
             
-        </>
+        </section>
     );
 }
 
