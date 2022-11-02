@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import './TimePanel.scss'
 import {format} from 'date-fns'
 
+//This is a component, which renders formated data obj using date-fns lib., receives native date obj as prop;
+
 const TimePanel = (props) => {
-    
-    
     
     return (
         <section className='timePanel'>
@@ -23,6 +24,10 @@ const TimePanel = (props) => {
             </div>
            </section>
     );
+}
+
+TimePanel.propTypes = {
+    time: PropTypes.object
 }
 
 export default TimePanel;

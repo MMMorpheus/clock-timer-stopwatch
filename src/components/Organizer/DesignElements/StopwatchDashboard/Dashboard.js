@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import './Dashboard.scss'
+
+//This is a component, which renders a list of Stopwatch laps, receives an array prop with date objects;
 
 import {format} from 'date-fns'
 import 'animate.css';
@@ -26,3 +29,7 @@ const Dashboard = (props) => {
 }
 
 export default Dashboard;
+
+Dashboard.propTypes = {
+    results: PropTypes.arrayOf(PropTypes.object)
+}
