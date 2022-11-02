@@ -37,22 +37,34 @@ const Timer = () => {
     }, [isRunning, time])
 
     const addHour = () => {
+        if(!isRunning) {
         setTime(add(time, {hours: 1}))
+        }
     }
     const subHour = () => {
+        if(!isRunning) {
         setTime(subHours(time, 1))
+        }
     }
     const addMinute = () => {
+        if(!isRunning) {
         setTime(add(time, {minutes: 1}))
+        }
     }
     const subMinute = () => {
+        if(!isRunning) {
         setTime(subMinutes(time, 1))
+        }
     }
     const addSecond = () => {
+        if(!isRunning) {
         setTime(add(time, {seconds: 1}))
+        }
     }
     const subSecond = () => {
+        if(!isRunning) {
         setTime(subSeconds(time, 1))
+        }
     }
     
     return (
