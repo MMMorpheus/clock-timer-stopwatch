@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import StopWatch from './StopWatch/StopWatch';
-import Timer from './Timer/Timer';
+import {Timer, StopWatch} from "../"
 
 import './Organizer.scss'
 

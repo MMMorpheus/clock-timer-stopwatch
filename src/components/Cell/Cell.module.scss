@@ -1,0 +1,33 @@
+@mixin center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    flex-grow: 1;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .time {
+        @include center;
+        height: 80%;
+        border: 1px solid black;
+        border-bottom: 2px solid black;
+        font-size: 150px;
+    }
+    .title {
+        @include center;
+        border: 1px solid black;
+        border-bottom: 5px solid black;
+        font-size: 30px;
+    }
+    .ms {
+        position: absolute;
+        font-size: 40px;
+        top: 15%;
+        right: 15%;
+    }
+}

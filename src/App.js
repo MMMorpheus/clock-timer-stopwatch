@@ -1,19 +1,12 @@
-import './App.css';
-import Header from './components/Header/Header';
-
-import {Outlet} from 'react-router-dom';
-
-
-
+import "./App.css";
+import Organizer from "./components/Organizer/Organizer";
 
 function App() {
-
   return (
     <main>
-      <Header />
-      <Outlet />
+      <Organizer />
     </main>
-  )
+  );
 }
 
 export default App;
