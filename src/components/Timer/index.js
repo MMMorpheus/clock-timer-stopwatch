@@ -1,4 +1,3 @@
-// import TimePanel from "../Organizer/DesignElements/TimePanel/TimePanel";
 import ControlPanel from "../Organizer/DesignElements/ControlPanel/ControlPanel";
 import SetUp from "../Organizer/DesignElements/TimerSetUp/SetUp";
 
