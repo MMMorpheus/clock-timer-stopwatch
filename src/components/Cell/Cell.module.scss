@@ -30,4 +30,36 @@
         top: 15%;
         right: 15%;
     }
+    > button {
+        position: absolute;
+        background-color: inherit;
+        border: none;
+        font-size: 30px;
+        left: 42.5%;
+        &._running {
+            > svg {
+                fill: grey;
+            }
+        }
+        &:disabled {
+            &:active {
+                translate: 0 0;
+            }
+        }
+    }
+    .plus {
+        top: 15%;
+        &:active {
+            translate: 0 -2px;
+        }
+    }
+    .minus {
+        bottom: 37%;
+        .bot {
+            rotate: 180deg;
+        }
+        &:active {
+            translate: 0 2px;
+        }
+    }
 }

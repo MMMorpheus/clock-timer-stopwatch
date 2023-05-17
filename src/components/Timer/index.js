@@ -1,31 +1,17 @@
-import ControlPanel from "../Organizer/DesignElements/ControlPanel/ControlPanel";
-import SetUp from "../Organizer/DesignElements/TimerSetUp/SetUp";
+import { Dial, ControlPanel } from "components";
+import { useTimer } from "hooks";
 
-import { Dial } from "../";
-
-import "./Timer.scss";
-import {useTimer} from "../../hooks"
+import "../Container.scss";
 
 export const Timer = () => {
   const [time, isRunning, controls, timerSetup] = useTimer();
   const { toggle, reset } = controls;
-  const { addHour, addMinute, addSecond, subHour, subMinute, subSecond } =
-    timerSetup;
+  
 
   return (
-    <>
-      <article className="timer">
-        <Dial time={time} />
-        <ControlPanel onGo={toggle} isRunning={isRunning} onReset={reset} />
-        <SetUp
-          addHour={addHour}
-          subHour={subHour}
-          addMinute={addMinute}
-          subMinute={subMinute}
-          addSecond={addSecond}
-          subSecond={subSecond}
-        />
-      </article>
-    </>
+      <div className="container">
+        <Dial time={time} timer timerSetup={timerSetup} isRunning={isRunning}/>
+        <ControlPanel isRunning={isRunning} onGo={toggle} onReset={reset} />
+      </div>
   );
 };

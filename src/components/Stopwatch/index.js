@@ -1,18 +1,15 @@
-import ControlPanel from "../Organizer/DesignElements/ControlPanel/ControlPanel";
-import Dashboard from "../Organizer/DesignElements/StopwatchDashboard/Dashboard";
+import { Dial, ControlPanel, Dashboard } from "components";
+import { useStopwatch } from "hooks";
 
-import { Dial } from "../";
-
-import "./StopWatch.scss";
-import {useStopwatch} from "../../hooks"
+import "../Container.scss";
 
 export const StopWatch = () => {
-    const [time, results, isRunning, controls] = useStopwatch()
-    const {toggle, reset, addLap} = controls;
+  const [time, results, isRunning, controls] = useStopwatch();
+  const { toggle, reset, addLap } = controls;
 
   return (
-    <section>
-      <article className="stopWatch">
+    <>
+      <div className="container">
         <Dial time={time} />
         <ControlPanel
           onGo={toggle}
@@ -20,8 +17,8 @@ export const StopWatch = () => {
           onReset={reset}
           onLap={addLap}
         />
-      </article>
-      {results.length === 0 ? null : <Dashboard results={results} />}
-    </section>
+      </div>
+      {results.length > 0 && <Dashboard results={results} />}
+    </>
   );
 };

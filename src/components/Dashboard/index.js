@@ -1,5 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types'
 import './Dashboard.scss'
 
 //This is a component, which renders a list of Stopwatch laps, receives an array prop with date objects;
@@ -8,7 +6,7 @@ import {format} from 'date-fns'
 import 'animate.css';
 import cx from 'classnames'
 
-const Dashboard = (props) => {
+export const Dashboard = (props) => {
     const {results} = props;
 
     const liElements = results.map((element, index) => {
@@ -26,10 +24,4 @@ const Dashboard = (props) => {
             </ol>
         </section>
     );
-}
-
-export default Dashboard;
-
-Dashboard.propTypes = {
-    results: PropTypes.arrayOf(PropTypes.object)
 }
